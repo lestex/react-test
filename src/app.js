@@ -10,10 +10,9 @@ import './styles/styles.scss';
 
 const store = configureStore();
 
-store.dispatch(addExpense({ description: 'Water bill' }));
-store.dispatch(addExpense({ description: 'Gaz bill' }));
-store.dispatch(addExpense({ description: 'Internet bill', amount: 1000 }));
-store.dispatch(addExpense({ description: 'rent', amount: 15000 }));
+store.dispatch(addExpense({ description: 'Water bill', amount: 4500 }));
+store.dispatch(addExpense({ description: 'Gaz bill', amount: 1000 }));
+store.dispatch(addExpense({ description: 'Rent', amount: 109500 }));
 
 const jsx = (
     <Provider store={store}>
