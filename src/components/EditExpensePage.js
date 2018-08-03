@@ -9,7 +9,7 @@ export class EditExpensePage extends React.Component {
     this.props.history.push('/');
   };
   onRemove = () => {
-    this.props.removeExpense({ id: props.expense.id });
+    this.props.removeExpense({ id: this.props.expense.id });
     this.props.history.push('/');
   };
   render() {
@@ -17,22 +17,21 @@ export class EditExpensePage extends React.Component {
       <div>
         <ExpenseForm
           expense={this.props.expense}
-          onSubmit={this.editExpense}
+          onSubmit={this.onSubmit}
         />
-        <button 
-          onClick={this.onRemove}>Remove</button>     
+        <button onClick={this.onRemove}>Remove</button>
       </div>
     );
-  };
+  }
 };
 
 const mapStateToProps = (state, props) => ({
-  expense: state.expenses.find((expense) => ( expense.id === props.match.params.id ))
+  expense: state.expenses.find((expense) => expense.id === props.match.params.id)
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
   editExpense: (id, expense) => dispatch(editExpense(id, expense)),
-  removeExpense: (id) => dispatch(removeExpense({ id }))
+  removeExpense: (data) => dispatch(removeExpense(data))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditExpensePage);
