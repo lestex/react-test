@@ -1,2 +1,6 @@
 node_modules/
 .DS_Store
+__snapshots__
+public/bundle.js*
+public/images/
+public/styles.css*
