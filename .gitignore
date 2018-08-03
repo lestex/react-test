@@ -3,3 +3,4 @@ node_modules/
 __snapshots__
 public/bundle.js*
 public/styles.css*
+public/dist/
