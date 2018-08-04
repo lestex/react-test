@@ -4,3 +4,5 @@ __snapshots__
 public/bundle.js*
 public/styles.css*
 public/dist/
+.env.test
+.env.development
